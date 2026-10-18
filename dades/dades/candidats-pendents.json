@@ -1,0 +1,23 @@
+[
+  {
+    "titol": "Digiduck Stories",
+    "pais": "Regne Unit",
+    "url": "https://www.childnet.com/resources/digiduck-stories/",
+    "estat": "Candidat amb evidència indexada de la portada oficial; accés directe fallit.",
+    "seguent_pas": "Revisar els cinc llibres i recursos docents abans d’integrar-los."
+  },
+  {
+    "titol": "Hector’s World: repartiment i episodis individuals",
+    "pais": "Nova Zelanda",
+    "url": "https://www.hectorsworld.com/",
+    "estat": "La portada no ha ofert contingut llegible; conservada només la informació acreditada per Netsafe.",
+    "seguent_pas": "Contrastar títols, transcripcions i repartiment de l’edició renovada de 2024."
+  },
+  {
+    "titol": "Cyber Ninjas: noms i episodis",
+    "pais": "Armènia",
+    "url": "https://www.unicef.org/armenia/en/media/18981/file/Cyber%20Ninja%20Comics.pdf",
+    "estat": "PDF gràfic sense lectura verificable.",
+    "seguent_pas": "Lectura visual o OCR verificat, sense confondre autores i autors amb personatges."
+  }
+]

@@ -1,0 +1,17 @@
+{
+  "versio": "0.13",
+  "data": "2026-10-17",
+  "fitxes": 84,
+  "fitxes_base": 76,
+  "noves": 9,
+  "duplicats": 1,
+  "paisos": 24,
+  "organismes": 6,
+  "families": 17,
+  "families_recurrents": 14,
+  "registres_narratius": 56,
+  "fonts_no_recuperades": [
+    "uy-entornos"
+  ],
+  "registres_de_personatge": 72
+}

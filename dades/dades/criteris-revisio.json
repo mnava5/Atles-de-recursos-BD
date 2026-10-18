@@ -1,0 +1,12 @@
+{
+  "versio": "0.13",
+  "data": "2026-10-17",
+  "base": "0.12",
+  "fitxes_base": 76,
+  "duplicats_fusionats": 1,
+  "noves_fitxes": 9,
+  "abast": "Revisió de les fonts principals de tot el corpus heretat i ampliació internacional dirigida. No cens mundial de recursos ni lectura integral de tots els materials subordinats.",
+  "criteri_recurrencia": "Declaració explícita del programa sobre un repartiment estable, o personatge identificat en més d’una història o format amb fonts primàries.",
+  "evidencia": "Les descripcions pedagògiques no són proves d’eficàcia. No s’han visionat tots els vídeos.",
+  "no_confirmar_absencia": "Una cerca sense resultats, una portada sense personatges o un error d’accés no acrediten absència de personatges."
+}
