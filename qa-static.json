@@ -1,0 +1,12 @@
+{
+  "html": 227,
+  "errors": [],
+  "resources": 84,
+  "families": 17,
+  "unique_narrative_records": 56,
+  "native_chapters": 12,
+  "native_subchapters": 84,
+  "source_urls": 120,
+  "browser_visual_test": "No executada: falta un executable de navegador en aquest entorn.",
+  "odissea_import": "No executada en un curs real."
+}

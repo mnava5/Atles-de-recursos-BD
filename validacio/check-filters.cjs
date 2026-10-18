@@ -1,0 +1,21 @@
+const fs=require('fs'),vm=require('vm'),assert=require('assert');
+const path=require('path'); const root=path.resolve(__dirname,'..');
+const dom=JSON.parse(fs.readFileSync(require('path').join(__dirname,'catalogue-dom.json'),'utf8'));
+const fields=dom.fields.map(x=>({id:x.id,type:x.type||'select-one',dataset:{filter:x.filter},value:'',events:{},addEventListener(e,fn){this.events[e]=fn},focus(){this.focused=true}}));
+const cards=dom.cards.map(x=>({dataset:x,hidden:false}));
+const count={textContent:''},empty={hidden:true},reset={events:{},addEventListener(e,fn){this.events[e]=fn}};
+const panel={hidden:true,querySelectorAll(s){assert.equal(s,'[data-filter]');return fields}};
+const doc={querySelector(s){assert.equal(s,'[data-catalogue]');return panel},querySelectorAll(s){assert.equal(s,'[data-resource]');return cards},getElementById(id){if(id==='result-count')return count;if(id==='no-results')return empty;if(id==='reset-filters')return reset;return fields.find(x=>x.id===id)}};
+vm.runInNewContext(fs.readFileSync(root+'/assets/filtres.js','utf8'),{document:doc});
+const visible=()=>cards.filter(x=>!x.hidden).map(x=>x.dataset.resource);
+function set(name,value){const f=fields.find(x=>x.dataset.filter===name);f.value=value;(f.events.input||f.events.change)()}
+assert.equal(visible().length,84);assert.equal(panel.hidden,false);
+set('country','Xile');assert.deepEqual(visible().sort(),['cl-care','cl-clic','cl-game','cl-literacy','cl-wifi','cl-wifi-balanc','cl-wifi-empathy','cl-wifi-footprint','cl-wifi-serie'].sort());
+set('search','Coni');assert.deepEqual(visible().sort(),['cl-care','cl-literacy']);
+reset.events.click();assert.equal(visible().length,84);assert.equal(fields[0].focused,true);
+set('search','PORTUGUES');assert.equal(visible().length,0);assert.equal(empty.hidden,false);
+reset.events.click();set('country','Portugal');set('characters','mascotes_recurrents');assert.deepEqual(visible(),['pt-game','pt-pisca']);
+reset.events.click();set('country','Sud-àfrica');assert.deepEqual(visible(),['za-webrangers']);
+reset.events.click();set('search','SUD-AFRICA');assert.deepEqual(visible(),['za-webrangers']);
+reset.events.click();set('characters','pendent_acces');assert.deepEqual(visible(),['uy-entornos']);
+console.log(JSON.stringify({tests:8,initial:84,status:'passed',scope:'Filter logic exercised with actual catalogue attributes; DOM adapter, not a browser test.'}));
